@@ -7,3 +7,4 @@ long_description 'Installs/Configures clarifi_apps'
 version '0.1.0'
 
 depends 'mongodb'
+depends 'elasticsearch'
