@@ -5,3 +5,4 @@ metadata
 cookbook 'mongodb'
 cookbook 'java'
 cookbook 'elasticsearch'
+cookbook 'rabbitmq'
