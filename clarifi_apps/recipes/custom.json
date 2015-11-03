@@ -13,7 +13,8 @@
 	"mongodb" : {
 		"config" : {
 			"replSet" : "mongo1",
-			"dbpath" : "/mnt/data"
+			"dbpath" : "/mnt/data",
+			"cluster_name" : "mongocluster"
 		}
 	},
 	"route53" : {
