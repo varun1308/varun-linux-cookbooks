@@ -4,9 +4,7 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-instances = node["opsworks"]["layers"]["mongo-config"]["instances"]
-
-config_instances = instances.join(',')
+config_instances = node["opsworks"]["layers"]["mongo-config"]["instances"].join(',')
 
 node["mongodb"]["sharding"]["configDB"] = config_instances
 
