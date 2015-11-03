@@ -12,9 +12,9 @@ Chef::Log.debug "Found instances found for mongo-config layer : #{node[:opsworks
 node["opsworks"]["layers"]["mongo-config"]["instances"]
 node["opsworks"]["layers"]["mongo-config"]["instances"].each { |instance|
 	
-	Chef::Log.debug "instance#{}: #{instance[:private_dns_name]}"
+	Chef::Log.debug "instance#{}: #{instance['private_dns_name']}"
 
-	config_instances.push "#{instance[:private_dns_name]}:27019"
+	config_instances.push "#{instance['private_dns_name']}:27019"
 }
 
 Chef::Log.debug "config_instances: #{config_instances}"
