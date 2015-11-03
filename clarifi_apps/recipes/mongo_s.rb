@@ -10,7 +10,7 @@ config_instances = []
 Chef::Log.debug "Found instances found for mongo-config layer : #{node[:opsworks][:layers]['mongo-config'][:instances]}"
 
 node["opsworks"]["layers"]["mongo-config"]["instances"]
-node["opsworks"]["layers"]["mongo-config"]["instances"].each { |instance|
+node["opsworks"]["layers"]["mongo-config"]["instances"].each { |key, instance|
 	
 	Chef::Log.debug "instance#{}: #{instance['private_dns_name']}"
 
