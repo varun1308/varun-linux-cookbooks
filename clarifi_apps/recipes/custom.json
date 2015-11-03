@@ -1,6 +1,10 @@
 {
+	"java" : {
+		"install_flavor": "openjdk",
+    	"jdk_version": "7"
+		},
 	"elasticsearch": {
-		"version" : "2.0.0",
+		"version" : "1.4.2",
 		"cluster" : {
 			"name" : "elasticsearch"
 		}
@@ -8,7 +12,12 @@
 	},
 	"mongodb" : {
 		"config" : {
-			"replSet" : "mongo1"
+			"replSet" : "mongo1",
+			"dbpath" : "/mnt/data"
 		}
+	},
+	"route53" : {
+		"domain" : "clarifi.io",
+		"dns_zone_id" : "ZTTGINFYJMDVJ"
 	}
 }

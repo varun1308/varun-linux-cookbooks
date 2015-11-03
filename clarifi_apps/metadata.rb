@@ -10,3 +10,4 @@ depends 'mongodb'
 depends 'java'
 depends 'elasticsearch', '~> 0.3.14'
 depends 'rabbitmq'
+depends "route53"
