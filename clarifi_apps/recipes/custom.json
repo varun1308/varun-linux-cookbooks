@@ -18,6 +18,7 @@
 	},
 	"route53" : {
 		"domain" : "clarifi.io",
-		"dns_zone_id" : "ZTTGINFYJMDVJ"
+		"dns_zone_id" : "ZTTGINFYJMDVJ",
+		"fog_version" : "1.33.0"
 	}
 }
