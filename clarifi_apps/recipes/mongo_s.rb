@@ -6,28 +6,20 @@
 
 Chef::Log.level = :debug
 
-configsrvs = search(
-  :node,
-  "mongodb_cluster_name:#{node['mongodb']['cluster_name']} AND \
-   mongodb_is_configserver:true AND \
-   chef_environment:#{node.chef_environment}"
-)
+config_instances = []
+Chef::Log.debug "Found instances found for mongoconfig layer : #{node[:opsworks][:layers]['mongo-config'][:instances]}"
 
-Chef::Log.debug "configsrvs 1:#{configsrvs}"
+node["opsworks"]["layers"]["mongo-config"]["instances"]
+node["opsworks"]["layers"]["mongo-config"]["instances"].each { |key, instance|
+	
+	Chef::Log.debug "instance: #{instance['private_dns_name']}"
 
-configsrvs = search(
-  :node,
-  "mongodb_cluster_name:#{node['mongodb']['cluster_name']} AND \
-   mongodb_is_configserver:true"
-)
+	config_instances.push "#{instance['private_dns_name']}:27019"
+}
 
-Chef::Log.debug "configsrvs 2:#{configsrvs}"
+config_instances_str = config_instances.join(',')
+Chef::Log.debug "config_instances_str: #{config_instances_str}"
 
-configsrvs = search(
-  :node,
-  "mongodb_cluster_name:#{node['mongodb']['cluster_name']}"
-)
-
-Chef::Log.debug "configsrvs 3:#{configsrvs}"
+node.set['mongodb']['config']['configdb'] = config_instances_str
 
 include_recipe 'mongodb::mongos'
