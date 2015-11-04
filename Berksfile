@@ -3,7 +3,3 @@ source 'https://supermarket.chef.io'
 metadata
 
 cookbook 'mongodb'
-cookbook 'java'
-cookbook 'elasticsearch'
-cookbook 'rabbitmq'
-cookbook "route53", ">= 0.3.4"
