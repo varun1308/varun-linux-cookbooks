@@ -11,3 +11,7 @@ depends 'java'
 depends 'elasticsearch', '~> 0.3.14'
 depends 'rabbitmq'
 depends "route53"
+depends 'apt', '>= 1.8.2'
+depends 'yum', '>= 3.0'
+depends 'python'
+depends 'runit', '>= 1.5.0'
