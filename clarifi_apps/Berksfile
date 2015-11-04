@@ -6,3 +6,7 @@ cookbook 'java'
 cookbook 'elasticsearch'
 cookbook 'rabbitmq'
 cookbook "route53", ">= 0.3.4"
+cookbook 'apt', '>= 1.8.2'
+cookbook 'yum', '>= 3.0'
+cookbook 'python'
+cookbook 'runit', '>= 1.5.0'
