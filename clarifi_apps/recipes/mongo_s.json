@@ -1,0 +1,9 @@
+{
+	"mongodb" : {
+		"config" : {
+			"port" : 27017,
+			"dbpath" : "/mnt/data"
+		},
+		"cluster_name" : "mongocluster"
+	}
+}

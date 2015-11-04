@@ -1,0 +1,10 @@
+{
+	"mongodb" : {
+		"config" : {
+			"port" : 27018,
+			"replSet" : "rs-mongo",
+			"dbpath" : "/mnt/data"
+		},
+		"cluster_name" : "mongocluster"
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"java" : {
+		"install_flavor": "openjdk",
+    	"jdk_version": "7"
+		},
+	"elasticsearch": {
+		"version" : "1.4.2",
+		"cluster" : {
+			"name" : "elasticsearch"
+		}
+
+	},
+	"mongodb" : {
+		"config" : {
+			"dbpath" : "/mnt/data",
+			"cluster_name" : "mongocluster"
+		}
+	},
+	"route53" : {
+		"domain" : "clarifi.io",
+		"dns_zone_id" : "ZTTGINFYJMDVJ",
+		"fog_version" : "1.33.0"
+	},
+	"opsworks": {
+	    "data_bags": {
+	      "mongo-shard": {
+	        "mongo-shard1": {
+	          "mongodb": {
+	            "config": {
+	              "port": 27018
+	            }
+	          }
+	       },
+	       "mongo-shard2": {
+	          "mongodb": {
+	            "config": {
+	              "port": 27018
+	            }
+	          }
+	       }
+	     },
+	     "mongo-config": {
+	        "mongo-config1": {
+	          "mongodb": {
+	            "config": {
+	              "port": 27019
+	            }
+	          }
+	       },
+	       "mongo-config2": {
+	          "mongodb": {
+	            "config": {
+	              "port": 27019
+	            }
+	          }
+	       }
+	     }
+		}
+	}
+}

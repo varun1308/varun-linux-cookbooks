@@ -35,9 +35,9 @@ configsrvs = search(
   :node,
   "role: mongo-config"
 )
-#values to define for configsrv custom json are ['mongodb']['configserver_url'], ['mongodb']['config']['port'], 
+#values to define for configsrv custom json are ['mongodb']['config']['port'], 
 configsrvs.each do |configsrv|
-      additional_configsrv_attributes = data_bag_item('mongodb', configsrv['hostname'])
+      additional_configsrv_attributes = data_bag_item('mongo-config', configsrv['hostname'])
       additional_configsrv_attributes.each do |key, value|
         configsrv.set[key] = value
       end

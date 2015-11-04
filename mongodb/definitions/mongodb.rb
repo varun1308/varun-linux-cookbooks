@@ -238,7 +238,7 @@ define :mongodb_instance,
     )
     #configure custom json for shard nodes ['mongodb']['config']['port'],
     shard_nodes.each do |shard_node|
-      additional_shard_node_attributes = data_bag_item('mongodb', shard_node['hostname'])
+      additional_shard_node_attributes = data_bag_item('mongo-shard', shard_node['hostname'])
       additional_shard_node_attributes.each do |key, value|
         shard_node.set[key] = value
       end
