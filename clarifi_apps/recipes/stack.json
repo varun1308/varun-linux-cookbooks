@@ -10,12 +10,6 @@
 		}
 
 	},
-	"mongodb" : {
-		"config" : {
-			"dbpath" : "/mnt/data",
-			"cluster_name" : "mongocluster"
-		}
-	},
 	"route53" : {
 		"domain" : "clarifi.io",
 		"dns_zone_id" : "ZTTGINFYJMDVJ",
@@ -48,6 +42,13 @@
 	          }
 	       },
 	       "mongo-config2": {
+	          "mongodb": {
+	            "config": {
+	              "port": 27019
+	            }
+	          }
+	       },
+	       "mongo-config3": {
 	          "mongodb": {
 	            "config": {
 	              "port": 27019
