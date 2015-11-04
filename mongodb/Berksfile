@@ -3,3 +3,7 @@ source "http://api.berkshelf.com"
 metadata
 
 cookbook 'chef-solo-search'
+cookbook 'apt', '>= 1.8.2'
+cookbook 'yum', '>= 3.0'
+cookbook 'python'
+cookbook 'runit', '>= 1.5.0'
