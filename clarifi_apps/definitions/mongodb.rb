@@ -51,6 +51,7 @@ define :mongodb_instance,
   node.default['mongodb']['config']['configsvr'] = true if node['mongodb']['is_configserver']
 
   require 'ostruct'
+  require 'mongodb'
 
   new_resource = OpenStruct.new
 
