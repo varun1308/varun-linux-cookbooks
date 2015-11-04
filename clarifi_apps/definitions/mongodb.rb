@@ -51,8 +51,7 @@ define :mongodb_instance,
   node.default['mongodb']['config']['configsvr'] = true if node['mongodb']['is_configserver']
 
   require 'ostruct'
-  require 'mongodb'
-
+  
   new_resource = OpenStruct.new
 
   new_resource.name                       = params[:name]
@@ -211,7 +210,7 @@ define :mongodb_instance,
 
     ruby_block 'config_replicaset' do
       block do
-        MongoDB.configure_replicaset(new_resource.replicaset, replicaset_name, rs_nodes) unless new_resource.replicaset.nil?
+        Chef::ResourceDefinitionList::MongoDB.configure_replicaset(new_resource.replicaset, replicaset_name, rs_nodes) unless new_resource.replicaset.nil?
       end
       action :nothing
     end
@@ -247,8 +246,8 @@ define :mongodb_instance,
 
     ruby_block 'config_sharding' do
       block do
-        MongoDB.configure_shards(node, shard_nodes)
-        MongoDB.configure_sharded_collections(node, new_resource.sharded_collections)
+        Chef::ResourceDefinitionList::MongoDB.configure_shards(node, shard_nodes)
+        Chef::ResourceDefinitionList::MongoDB.configure_sharded_collections(node, new_resource.sharded_collections)
       end
       action :nothing
     end
